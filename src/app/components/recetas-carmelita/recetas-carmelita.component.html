@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row mx-auto text-center mt-5">
+    <mat-card class="example-card" *ngFor="let receta of recetas, index as i">
+      <mat-card-content>
+        <img mat-card-image [src]="receta.img" [alt]="receta.alt">
+        <h2 style="text-transform: uppercase;">{{receta.nombre}}</h2>
+        <button mat-button color="primary"><a [routerLink]="['/recetas-carmelita/', i]" ><span class="material-icons">
+          read_more
+          </span></a></button>
+        <button mat-button color="primary"><a [href]="receta.linkVideo" target="_blank"><span class="material-icons">
+          play_arrow
+          </span></a></button>
+          <button mat-button color="primary"><a [routerLink]="['/recetas-carmelita/galeria/',i]" routerLinkActive="router-link-active" ><span class="material-icons">
+            perm_media
+            </span></a></button>
+        
+      </mat-card-content>
+    </mat-card>
+    
+  </div>
+</div> 
+
+<!-- <div class="container">
+  <div class="row mx-auto text-center mt-5">
+    <mat-card class="example-card" *ngFor="let card of cards">
+      <img mat-card-image [src]="card.img" [alt]="card.alt">
+      <mat-card-content>
+        <h2>{{card.nombre}}</h2>
+        <h3>{{card.descripcion}}</h3>
+        <h4>{{card.ingredientes}}</h4>
+        <p>{{ card.preparacion }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button><a [href]="card.linkVideo" target="_blank">{{card.botonVideo}}</a></button>
+      </mat-card-actions>
+    </mat-card>
+    
+  </div>
+</div> -->
